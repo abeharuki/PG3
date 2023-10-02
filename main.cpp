@@ -1,4 +1,5 @@
 ﻿#include <stdio.h>
+#include <iostream>
 
 template<typename T>
 T Min(T a, T b) {
@@ -17,9 +18,17 @@ char Min<char>(char a, char b) {
 }
 
 int main() {
-	printf("%d\n", Min<int>(10, 11));
-	printf("%f\n", Min<float>(15.3f, 17.2f));
-	printf("%lf\n", Min<double>(113, 21));
-	printf("%c\n", Min<char>(1,2));
+
+	int minInt = Min<int>(10, 11);
+	std::cout << minInt << std::endl;
+
+	float minFloat = Min<float>(15.3f, 17.2f);
+	std::cout << minFloat << std::endl;
+
+	double minDouble = Min<double>(113, 21);
+	std::cout << minDouble << std::endl;
+
+	Min<char>(1,2);
+
 	return 0;
 }
