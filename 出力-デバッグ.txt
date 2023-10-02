@@ -1,0 +1,12 @@
+﻿'PG3.exe' (Win32): 'C:\授業後期2年\PG3\PG3\x64\Debug\PG3.exe' が読み込まれました。シンボルが読み込まれました。
+'PG3.exe' (Win32): 'C:\Windows\System32\ntdll.dll' が読み込まれました。
+'PG3.exe' (Win32): 'C:\Windows\System32\kernel32.dll' が読み込まれました。
+'PG3.exe' (Win32): 'C:\Windows\System32\KernelBase.dll' が読み込まれました。
+'PG3.exe' (Win32): 'C:\Windows\System32\vcruntime140d.dll' が読み込まれました。
+'PG3.exe' (Win32): 'C:\Windows\System32\ucrtbased.dll' が読み込まれました。
+スレッド 0x4e84 はコード 0 (0x0) で終了しました。
+'PG3.exe' (Win32): 'C:\Windows\System32\kernel.appcore.dll' が読み込まれました。
+'PG3.exe' (Win32): 'C:\Windows\System32\msvcrt.dll' が読み込まれました。
+スレッド 0xad58 はコード 0 (0x0) で終了しました。
+スレッド 0xaee8 はコード 0 (0x0) で終了しました。
+プログラム '[38232] PG3.exe' はコード 0 (0x0) で終了しました。
