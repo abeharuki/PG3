@@ -4,7 +4,7 @@ int Recursive(int n1 ,int n2, int n3,int count) {
 	int n = 0;
 	
 	if (n1+n3 > n2) {
-		printf("%dŠÔ‚ÅÄ‹A“I’À‹à‘ÌŒn‚Ì‚Ù‚¤‚ª–×‚©‚é",count );
+		printf("%dæ™‚é–“ã§å†å¸°çš„ãªè³ƒé‡‘ä½“ç³»ã®ã»ã†ãŒå„²ã‹ã‚‹",count );
 		return (1);
 	}
 	else {
@@ -16,7 +16,7 @@ int Recursive(int n1 ,int n2, int n3,int count) {
 			n2 = n2 + 1072;
 		}
 		
-		printf("Ä‹A‹‹[%d]‹‹—¿[%dÄ‹A,%dˆê”Ê],%dŠÔ\n", n1,n1+n3,n2,count);
+		printf("å†å¸°è‡ªçµ¦[%d]çµ¦æ–™[%då†å¸°,%dä¸€èˆ¬],%dæ™‚çµ¦\n", n1,n1+n3,n2,count);
 		
 		return Recursive(n1, n2,n3, count);
 	}
@@ -29,11 +29,11 @@ int Recursive(int n1 ,int n2, int n3,int count) {
 
 
 int main() {
-	//‰ñ”
+	//ï¿½ï¿½
 	int n = 0;
-	//Ä‹A“I
+	//ï¿½Ä‹Aï¿½I
 	int n1 = 100;
-	//ˆê”Ê“I
+	//ï¿½ï¿½Ê“I
 	int n2 = 1072;
 	int n3 = 0;
 	int result = 0;
