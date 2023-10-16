@@ -60,7 +60,7 @@ void Compare(int a,int b) {
 
 }
 
-//三秒後を表示
+//三秒後に表示
 void setTimeout(PFunc p, int second,int second2) {
 	printf("サイコロの出目は....");
 
