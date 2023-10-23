@@ -1,21 +1,11 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
 #include <functional>
+#include <Windows.h>
 
 
-typedef void(*PFunc)(int, int);
 
-
-//三秒後に表示
-void setTimeout(PFunc p, int second, int second2) {
-	
-
-	p(second, second2);
-}
-
-int main(void)
-{
+int main(void) {
 
 	auto random_ = []() {
 		//シードの初期化
@@ -77,7 +67,8 @@ int main(void)
 	printf("サイコロの出目が偶数か奇数化当ててね！\n偶数なら0奇数なら1を押してね！\n");
 	scanf_s("%d", &check);
 
-	setTimeout_( random_(), check);
+	setTimeout_(random_(), check);
 
 
 	return 0;
+}
