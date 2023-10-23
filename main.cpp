@@ -29,11 +29,11 @@ int Recursive(int n1 ,int n2, int n3,int count) {
 
 
 int main() {
-	//��
+	//カウント
 	int n = 0;
-	//�ċA�I
+	//再帰的時給
 	int n1 = 100;
-	//��ʓI
+	//一般的給料
 	int n2 = 1072;
 	int n3 = 0;
 	int result = 0;
