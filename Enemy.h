@@ -13,6 +13,9 @@ public:
 	//離脱
 	void PhaseLeave();
 
+	void Update();
+
+	bool GetPhase() { return phase; }
 
 private:
 
@@ -28,5 +31,6 @@ private:
 
 	Phase phase_ = Phase::Proximity;
 
+	bool phase = true;
 
 };
