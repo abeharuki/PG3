@@ -61,12 +61,12 @@ void Compare(int a,int b) {
 }
 
 //三秒後に表示
-void setTimeout(PFunc p, int second,int second2) {
+void setTimeout(PFunc p, int second,int checkNum) {
 	printf("サイコロの出目は....");
 
 	Sleep(second * 1000);
 
-	p(second, second2);
+	p(second, checkNum);
 }
 
 int main(void) 
