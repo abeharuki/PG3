@@ -3,7 +3,7 @@
 
 
 int main(void) {
-	DeathEater* death_eaters[3;
+	DeathEater* death_eaters[3];
 	
 	return 0;
 }
