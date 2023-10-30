@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "DeathEater.h"
-#include "Demetor.h"
+#include "Dementor.h"
+#include "Load.h"
 
 int main(void) {
 	DeathEater* death_eaters[3];
