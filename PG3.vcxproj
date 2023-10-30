@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="DeathEater.h" />
     <ClInclude Include="Demetor.h" />
+    <ClInclude Include="Load.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
