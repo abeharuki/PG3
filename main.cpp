@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int Recursive(int n1 ,int n2, int n3,int count) {
+int CalculateSalary(int n1 ,int n2, int n3,int count) {
 	int n = 0;
 	
 	if (n1+n3 > n2) {
@@ -18,7 +18,7 @@ int Recursive(int n1 ,int n2, int n3,int count) {
 		
 		printf("再帰自給[%d]給料[%d再帰,%d一般],%d時給\n", n1,n1+n3,n2,count);
 		
-		return Recursive(n1, n2,n3, count);
+		return CalculateSalary(n1, n2,n3, count);
 	}
 	
 
@@ -38,7 +38,7 @@ int main() {
 	int n3 = 0;
 	int result = 0;
 
-	result = Recursive(n1,n2,n3,n);
+	result = CalculateSalary(n1,n2,n3,n);
 	
 	
 	
