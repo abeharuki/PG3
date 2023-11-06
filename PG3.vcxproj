@@ -131,15 +131,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DeathEater.cpp" />
-    <ClCompile Include="Load.cpp" />
-    <ClCompile Include="Dementor.cpp" />
+    <ClCompile Include="Move.cpp" />
+    <ClCompile Include="Pedestrian.cpp" />
+    <ClCompile Include="Bicycle.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DeathEater.h" />
-    <ClInclude Include="Dementor.h" />
-    <ClInclude Include="Load.h" />
+    <ClInclude Include="Move.h" />
+    <ClInclude Include="Bicycle.h" />
+    <ClInclude Include="Pedestrian.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,29 +1,29 @@
 #include <stdio.h>
-#include "DeathEater.h"
-#include "Dementor.h"
-#include "Load.h"
+#include "Move.h"
+#include "Bicycle.h"
+#include "Pedestrian.h"
 
 int main(void) {
-	DeathEater* death_eaters[3];
+	Move* Moves[3];
 	
 	printf("生成フェーズ\n");
 	for (int i = 0; i < 2; i++) {
 		if (i < 1) {
-			death_eaters[i] = new Dementor;
+			Moves[i] = new Bicycle;
 		}
 		else {
-			death_eaters[i] = new Load;
+			Moves[i] = new Pedestrian;
 		}
 	}
 
-	printf("攻撃フェーズ\n");
+	printf("移動フェーズ\n");
 	for (int i = 0; i < 2; i++) {
-		death_eaters[i]->Attack();
+		Moves[i]->Accident();
 	}
 
 	printf("破棄フェーズ\n");
 	for (int i = 0; i < 2; i++) {
-		delete death_eaters[i];
+		delete Moves[i];
 	}
 
 	return 0;
