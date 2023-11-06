@@ -1,9 +1,11 @@
 #pragma once
- 
+
+
+
 class DeathEater {
 public:
 	DeathEater();
-	~DeathEater();
+	virtual ~DeathEater();
 	virtual void Attack();
 protected:
 	const char* name;

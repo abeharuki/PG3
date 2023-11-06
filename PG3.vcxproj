@@ -127,6 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DeathEater.cpp" />
+    <ClCompile Include="Load.cpp" />
     <ClCompile Include="Dementor.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
