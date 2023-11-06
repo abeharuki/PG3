@@ -7,7 +7,7 @@ public:
 	Rectangle();
 	~Rectangle();
 
-	void size()override;
+	void size(float vertical,float beside)override;
 	void draw()override;
 private:
 

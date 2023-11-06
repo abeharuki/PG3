@@ -7,7 +7,7 @@ public:
 	Circle();
 	~Circle();
 
-	void size()override;
+	void size(float radius1,float radius2)override;
 	void draw()override;
 private:
 
