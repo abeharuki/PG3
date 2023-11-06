@@ -131,15 +131,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Move.cpp" />
-    <ClCompile Include="Pedestrian.cpp" />
-    <ClCompile Include="Bicycle.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Move.h" />
-    <ClInclude Include="Bicycle.h" />
-    <ClInclude Include="Pedestrian.h" />
+    <ClInclude Include="Circle.h" />
+    <ClInclude Include="IShape.h" />
+    <ClInclude Include="Rectangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
