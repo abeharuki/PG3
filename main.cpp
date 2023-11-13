@@ -5,7 +5,7 @@
 int main(void) {
 	
 	Compare<int, int>   b1(20, 6) ;
-	Compare<float, float> b2(2.0, 1.0);
+	Compare<float, float> b2(2.0f, 1.0f);
 	Compare<double, double> b3(2, 18.0);
 	Compare<int, float> b4(13, 16.3);
 	Compare<int, double> b5(2, 100);
