@@ -2,12 +2,23 @@
 #include <time.h>
 #include <functional>
 #include <Windows.h>
+#include <iostream>
 
+typedef void(*PFunc)(int);
+
+void SetTimeout(PFunc p,int check) {
+	printf("サイコロの出目は....");
+
+	Sleep(3 * 1000);
+
+	p(check);
+}
 
 
 int main(void) {
 
-	auto random_ = []() {
+
+	std::function<int()> random_ = []() {
 		//シードの初期化
 		srand(static_cast<unsigned int>(time(NULL)));
 		int num;
@@ -15,7 +26,7 @@ int main(void) {
 		return num;
 	};
 
-	auto select_ = [](int i) {
+	std::function<int(int)> select_ = [](int i) {
 		int num = 0;
 		if (i == 1) {
 			num = 1;
@@ -29,13 +40,14 @@ int main(void) {
 		return num;
 	};
 
-	auto compare_ = [&](int a, int b) {
-		int num = select_(b);
-		printf("%d\n", a);
+	std::function <void(int)> compare_ = [&](int check) {
+		int num = select_(check);
+		int random = random_();
+		printf("%d\n", random);
 
 		//偶数
 		if (num == 0) {
-			if (a % 2 == 0) {
+			if (random % 2 == 0) {
 				printf("おめでと大正解！\n");
 			}
 			else {
@@ -45,7 +57,7 @@ int main(void) {
 
 		//奇数
 		if (num == 1) {
-			if (a % 2 == 0) {
+			if (random % 2 == 0) {
 				printf("残念はずれ；；\n");
 			}
 			else {
@@ -54,20 +66,15 @@ int main(void) {
 		}
 	};
 
-	auto setTimeout_ = [&](int second, int second2) {
-		printf("サイコロの出目は....");
-
-		Sleep(second * 1000);
-
-		compare_(second, second2);
-	};
-
 	int check;
 
-	printf("サイコロの出目が偶数か奇数化当ててね！\n偶数なら0奇数なら1を押してね！\n");
+	printf("サイコロの出目が丁(偶数)か半(奇数)か当ててね！\n偶数なら0奇数なら1を押してね！\n");
 	scanf_s("%d", &check);
 
-	setTimeout_(random_(), check);
+	PFunc p;
+	p = compare_.target<void(int)>();
+
+	SetTimeout(p,check);
 
 
 	return 0;
