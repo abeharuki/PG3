@@ -14,12 +14,12 @@ int CompartionSalary(int value1, int value2,int count) {
 	value1 = AddSalary(value1);
 	value2 = CalculateSalary(value2);
 	
-	if (value1 > value2) {
-		return CompartionSalary(value1, value2, count);
-
+	if (value1 < value2) {
+		return count;
+		
 	}
 
-	return count;
+	return CompartionSalary(value1, value2, count);
 	
 }
 
