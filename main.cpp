@@ -4,12 +4,12 @@
 #include <Windows.h>
 #include <iostream>
 
-typedef void(*PFunc)(int);
+typedef void(*PFunc)(int*);
 
-void SetTimeout(PFunc p,int check) {
+void SetTimeout(PFunc p,int time,int* check) {
 	printf("サイコロの出目は....");
 
-	Sleep(3 * 1000);
+	Sleep(time * 1000);
 
 	p(check);
 }
@@ -40,7 +40,14 @@ int main(void) {
 		return num;
 	};
 
-	std::function <void(int)> compare_ = [&](int check) {
+	//std::function <void(int)> compare_ =
+
+	int check;
+
+	printf("サイコロの出目が丁(偶数)か半(奇数)か当ててね！\n偶数なら0奇数なら1を押してね！\n");
+	scanf_s("%d", &check);
+
+	PFunc p = [](int check) {
 		int num = select_(check);
 		int random = random_();
 		printf("%d\n", random);
@@ -66,15 +73,7 @@ int main(void) {
 		}
 	};
 
-	int check;
-
-	printf("サイコロの出目が丁(偶数)か半(奇数)か当ててね！\n偶数なら0奇数なら1を押してね！\n");
-	scanf_s("%d", &check);
-
-	PFunc p;
-	p = compare_.target<void(int)>();
-
-	SetTimeout(p,check);
+	SetTimeout(p,3,&check);
 
 
 	return 0;
