@@ -1,46 +1,28 @@
 #include <stdio.h>
 #include <list>
+#include <algorithm>
 #include <iostream>
-using namespace std;
+#include <fstream>
+#include <string>
 
 
 int main() {
+
+	std::fstream file("PG3_05_02.txt");
 	
-	list<const char*> JY; 
-	list<const char*>::iterator itr;
-
-	JY = {
-		"Tokyo","Kanda","Akihabara","Okachimachi","Ueno","Uguisudani","Nippori","Tabata","Komagome","Sugamo"
-		,"Otsuka","Ikebukuro","Mejiro","Takadanobaba","Shin-Okubo","Shinjuku","Yoyogi","Harajuku","Shibuya","Ebisu","Meguro","Gotanda","Osaki"
-		,"Shinagawa","Tamachi","Hamamatsucho","Shimbashi","Yurakucho"
-	};
-
-	cout << "1970" << endl;
-	for (itr = JY.begin(); itr != JY.end(); ++itr) {
-		cout << *itr << endl;
-	}
 
 	
-	cout << "\n2019" << endl;
-	for (itr = JY.begin(); itr != JY.end(); ++itr) {
-		if (*itr == "Tabata") {
-			itr = JY.insert(itr, "Nishi-Nippori");
-			cout << *itr << endl;
-			++itr;
+	if (file.is_open()) {
+		std::string line;
+		while (getline(file, line,',')) {
+			std::cout << line << std::endl;
 		}
-		cout << *itr << endl;
+		file.close();
 	}
-
-
-	cout << "\n2022" << endl;
-	for (itr = JY.begin(); itr != JY.end(); ++itr) {
-		if (*itr == "Tamachi") {
-			itr = JY.insert(itr, "Takanawa Gateway");
-			cout << *itr << endl;
-			++itr;
-		}
-		cout << *itr << endl;
-	}
+	
+	
+	
+	
 
 	return 0;
 }
