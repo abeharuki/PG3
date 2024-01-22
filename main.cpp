@@ -4,9 +4,9 @@
 #include <Windows.h>
 #include <iostream>
 
-typedef void(*PFunc)(int*);
+template <typename PFunc>
 
-void SetTimeout(PFunc p,int time,int* check) {
+void SetTimeout(PFunc p, int time, int check) {
 	printf("サイコロの出目は....");
 
 	Sleep(time * 1000);
@@ -18,7 +18,7 @@ void SetTimeout(PFunc p,int time,int* check) {
 int main(void) {
 
 
-	std::function<int()> random_ = []() {
+	std::function<int()> Random = []() {
 		//シードの初期化
 		srand(static_cast<unsigned int>(time(NULL)));
 		int num;
@@ -26,7 +26,7 @@ int main(void) {
 		return num;
 	};
 
-	std::function<int(int)> select_ = [](int i) {
+	std::function<int(int)> select = [](int i) {
 		int num = 0;
 		if (i == 1) {
 			num = 1;
@@ -47,11 +47,13 @@ int main(void) {
 	printf("サイコロの出目が丁(偶数)か半(奇数)か当ててね！\n偶数なら0奇数なら1を押してね！\n");
 	scanf_s("%d", &check);
 
-	PFunc p = [](int check) {
-		int num = select_(check);
-		int random = random_();
-		printf("%d\n", random);
+	
 
+	std::function<int(int)> isCorrect = [=](int check) {
+	
+		int num = select(check);
+		int random = Random();
+		printf("%d\n", random);
 		//偶数
 		if (num == 0) {
 			if (random % 2 == 0) {
@@ -71,9 +73,13 @@ int main(void) {
 				printf("おめでと大正解！\n");
 			}
 		}
-	};
 
-	SetTimeout(p,3,&check);
+		return num;
+	};
+		
+	
+
+	SetTimeout(isCorrect,3,check);
 
 
 	return 0;
