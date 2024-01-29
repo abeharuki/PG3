@@ -2,22 +2,26 @@
 #include <iostream>
 #include <thread>
 
-void thread(std::string thread) {
-	std::cout << thread << std::endl;
-}
 
 
 int main() {
 	
-	std::thread th1(thread,"thread1");
-	th1.join();
+	std::string a(100000,'a');
+	
+	
 
-	std::thread th2(thread, "thread2");
-	th2.join();
+	auto copyStart = std::chrono::system_clock::now();
+	std::string copyA = a;
+	auto copyEnd = std::chrono::system_clock::now();
+	std::chrono::duration<double, std::micro>elapsedlCopy = copyEnd - copyStart;
 
-	std::thread th3(thread, "thread3");
-	th3.join();
+	auto moveStart = std::chrono::system_clock::now();
+	std::string moveA = std::move(a);
+	auto moveEnd = std::chrono::system_clock::now();
+	std::chrono::duration<double, std::micro>elapsedlMove = moveEnd - moveStart;
 
+	std::cout << elapsedlCopy.count() << "μs" << std::endl;
+	std::cout << elapsedlMove.count() << "μs" << std::endl;
 
 	return 0;
 }
